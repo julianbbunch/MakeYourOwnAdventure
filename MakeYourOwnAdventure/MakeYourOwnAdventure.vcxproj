@@ -139,7 +139,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Choice.cpp" />
     <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="MYOA.cpp" />
+    <ClCompile Include="NameItem.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PrintItem.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Thing.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Choice.h" />
+    <ClInclude Include="IChoiceAction.h" />
+    <ClInclude Include="IThingAction.h" />
+    <ClInclude Include="MYOA.h" />
+    <ClInclude Include="NameItem.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PrintItem.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Thing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
