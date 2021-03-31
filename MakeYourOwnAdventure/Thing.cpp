@@ -37,7 +37,7 @@ void Thing::treePrint(std::ostream& rcOut, std::istream& rcIn, int tabs) {
 			rcOut << "  ";
 		}
 		rcOut << "  ";
-		mcThings[i].treePrint(rcOut, rcIn, ++tabs);
+		mcThings[i].treePrint(rcOut, rcIn, tabs + 1);
 	}
 }
 
@@ -47,6 +47,40 @@ void Thing::add(Thing cThing) {
 	for (unsigned int i = 0; mcThings.size() > i; i++) {
 		if (cThing.mcRealName == mcThings[i].mcRealName) {
 			mcThings[i].mQuantity += cThing.mQuantity;
+			i = mcThings.size();
+			bAdded = true;
+		}
+	}
+
+	if (!bAdded) {
+		mcThings.push_back(cThing);
+	}
+}
+
+void Thing::addOverwrite(Thing cThing) {
+	bool bAdded = false;
+
+	for (unsigned int i = 0; mcThings.size() > i; i++) {
+		if (cThing.mcRealName == mcThings[i].mcRealName) {
+			mcThings[i].mQuantity += cThing.mQuantity;
+			mcThings[i].mcDisplayName = cThing.mcDisplayName;
+			mcThings[i].mcThings = cThing.mcThings;
+			i = mcThings.size();
+			bAdded = true;
+		}
+	}
+
+	if (!bAdded) {
+		mcThings.push_back(cThing);
+	}
+}
+
+void Thing::overwrite(Thing cThing) {
+	bool bAdded = false;
+
+	for (unsigned int i = 0; mcThings.size() > i; i++) {
+		if (cThing.mcRealName == mcThings[i].mcRealName) {
+			mcThings[i] = cThing;
 			i = mcThings.size();
 			bAdded = true;
 		}
@@ -102,7 +136,7 @@ void Thing::remove(int quantity, Thing cThing) {
 	}
 }
 
-void Thing::removeOne(Thing cThing) {
+void Thing::remove(Thing cThing) {
 	for (unsigned int i = 0; mcThings.size() > i; i++) {
 		if (cThing.mcRealName == mcThings[i].mcRealName) {
 			if (1 == mcThings[i].mQuantity) {

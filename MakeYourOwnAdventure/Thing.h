@@ -11,11 +11,13 @@ public:
 	void printOrName(std::ostream& rcOut, std::istream& rcIn);
 	void printOrNameContents(std::ostream& rcOut, std::istream& rcIn);
 	void add(Thing cThing);
+	void addOverwrite(Thing cThing);
+	void overwrite(Thing cThing);
 	bool contains(Thing cThing);
 	bool contains(int quantity, Thing cThing);
 	int count();
 	void remove(int quantity, Thing cThing);
-	void removeOne(Thing cThing);
+	void remove(Thing cThing);
 	void removeAll(Thing cThing);
 	void empty();
 	void expand(Thing cThing);

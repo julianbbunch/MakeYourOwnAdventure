@@ -23,6 +23,8 @@ int main(int argc, char* argv[])
 	cout << "After adding\n";
 	cThing1.add(cThing2);
 	cThing1.add(cThing1);
+	cThing1.add(cThing1);
+	cThing1.remove(cThing2);
 	cThing1.printOrName(cOut, cIn);
 	cout << endl << "Print all:\n";
 	cThing1.printOrNameContents(cOut, cIn);
