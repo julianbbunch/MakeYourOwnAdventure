@@ -8,7 +8,9 @@ public:
 	Choice();
 
 	void print(std::ostream& rcOut);
+	void fds();
 
 private:
 	std::vector<Thing> mcThings;
+	std::string mcText;
 };

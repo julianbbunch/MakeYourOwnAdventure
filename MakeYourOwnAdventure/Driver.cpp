@@ -30,5 +30,6 @@ int main(int argc, char* argv[])
 	cThing1.printOrNameContents(cOut, cIn);
 	cout << endl;
 
+
 	return EXIT_SUCCESS;
 }
